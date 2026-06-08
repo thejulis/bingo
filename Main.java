@@ -1,66 +1,53 @@
-package com.uce;
+package com.arreglos;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Random random = new Random(); 
-        Scanner sc = new Scanner(System.in);
+        ArrayList<Curso> sucursalA = new ArrayList<>();
+        ArrayList<Curso> sucursalB = new ArrayList<>();
+        ArrayList<Curso> sucursalC = new ArrayList<>();
 
-        int tabla[][] = new int[5][5];
-        boolean tachar[][] = new boolean[5][5];
+        sucursalA.add(new Curso("Matemáticas", 18));
+        sucursalA.add(new Curso("Física", 25));
+        sucursalA.add(new Curso("Química", 20));
 
-        System.out.println("¡Welcome to Bingo!");
+        sucursalB.add(new Curso("Matemáticas", 32));
+        sucursalB.add(new Curso("Física", 15));
+        sucursalB.add(new Curso("Química", 28));
+        sucursalB.add(new Curso("Biología", 32));
+        sucursalB.add(new Curso("Historia", 32));
+        sucursalB.add(new Curso("Geografía", 32));
 
-        
-        for (int fila = 0; fila < 5; fila++) {
-            for (int columna = 0; columna < 5; columna++) {
+        sucursalC.add(new Curso("Literatura", 18));
+        sucursalC.add(new Curso("Artes", 25));
+        sucursalC.add(new Curso("Botánica", 20));
+        sucursalC.add(new Curso("Programación", 34));
 
-                if (fila == 2 && columna == 2) {
-                    tabla[fila][columna] = 0;
-                    tachar[fila][columna] = true;
-                } else {
-                    tabla[fila][columna] = random.nextInt(25) + 1;
-                    tachar[fila][columna] = false;
-                }
-            }
+        System.out.println("===== SUCURSAL A =====");
+        for (Curso curso : sucursalA) {
+            System.out.println(curso);
+
         }
 
-        while (true) {
+        System.out.println("\n===== SUCURSAL B =====");
+        for (Curso curso : sucursalB) {
+            System.out.println(curso);
 
-            System.out.println("\nTabla del Jugador 1:");
-
-            for (int fila = 0; fila < 5; fila++) {
-                for (int columna = 0; columna < 5; columna++) {
-
-                    if (tachar[fila][columna]) {
-                        System.out.print("  X  ");
-                    } else {
-                        System.out.printf("%3d  ", tabla[fila][columna]);
-                    }
-                }
-                System.out.println();
-            }
-
-            int numeroSacado = random.nextInt(25) + 1;
-            System.out.println("\nNúmero sacado: " + numeroSacado);
-
-           
-            for (int fila = 0; fila < 5; fila++) {
-                for (int columna = 0; columna < 5; columna++) {
-
-                    if (tabla[fila][columna] == numeroSacado) {
-                        tachar[fila][columna] = true;
-                    }
-                }
-            }
-
-            System.out.println("Presiona ENTER para el siguiente número...");
-            sc.nextLine();
         }
+
+        System.out.println("\n===== SUCURSAL C =====");
+        for (Curso curso : sucursalC) {
+            System.out.println(curso);
+
+        }
+
+
+ 
+
+
+
     }
 }
-//Madeline Castillo, Angelo Maigualca 
